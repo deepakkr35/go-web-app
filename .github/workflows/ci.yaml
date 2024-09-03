@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branch:
+    branches:
       - main
       path-ignore:
         - 'README.md'
