@@ -68,6 +68,7 @@
     <main>
         <section>
             <h1>Learn DevOps from Basics</h1>
+            <p>Pod IP Address: <span id="pod-ip">Loading...</span></p>
             <p>The main purpose of this website is to guide people on how to learn DevOps 
                 from basics for Free. We will provide you with the best resources to learn.
             </p>
@@ -87,5 +88,12 @@
     <footer>
         <p>&copy; Abhishek.Veeramalla</p>
     </footer>
+    <script>
+        // Fetch the IP address and update the HTML
+        fetch('/pod-ip')
+            .then(response => response.text())
+            .then(ip => document.getElementById('pod-ip').textContent = ip)
+            .catch(() => document.getElementById('pod-ip').textContent = 'Unable to fetch IP address');
+    </script>
 </body>
 </html>
